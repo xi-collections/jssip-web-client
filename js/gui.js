@@ -598,6 +598,7 @@ $(document).ready(function(){
               },
             });
           });
+          button_dial.click();
 
           // unhide HTML Video Elements
           //$('#remoteView').attr('hidden', false);
