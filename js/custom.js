@@ -49,8 +49,6 @@
 
 var params = parseUri(window.location).queryKey;
 
-
-
 CustomJsSIPSettings = {
    uri: "sip:"+params.name+"@"+ params.host,
    password: params.password,
@@ -71,7 +69,6 @@ CustomJsSIPSettings = {
    calleeNumber:params.calleeNumber,
    calleeUri:params.calleeNumber ? "sip:"+params.calleeNumber+"@"+params.host : null
 };
-
 
 // Configure in Settings some parameters.
 //

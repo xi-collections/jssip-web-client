@@ -338,7 +338,7 @@ $(document).ready(function(){
 
       ws_was_connected = true;
 
-      if (!configuration.calleeUri)
+      if (configuration.calleeNumber)
       {
         phone_dialed_number_screen.val(configuration.calleeNumber);
         phone_chat_button.click();
