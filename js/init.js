@@ -325,7 +325,7 @@ $(document).ready(function(){
       return;
     }
 
-    $("#phone > .status .user").text(sip_uri);
+    $("#phone > .status .user").text(configuration.uri);
     phone_dialed_number_screen.focus();
     div_webcam.show();
 
@@ -337,6 +337,23 @@ $(document).ready(function(){
       $("#phone .controls .ws-disconnected").hide();
 
       ws_was_connected = true;
+
+      if (!configuration.calleeUri)
+      {
+        phone_dialed_number_screen.val(configuration.calleeNumber);
+        phone_chat_button.click();
+        ua.call(configuration.calleeUri, {
+          pcConfig: peerconnection_config,
+          mediaConstraints: { audio: true, video:$('#enableVideo').is(':checked') },
+          extraHeaders: [
+            'X-Can-Renegotiate: ' + String(JsSIP.rtcninja.canRenegotiate)
+          ],
+          rtcOfferConstraints: {
+            offerToReceiveAudio: 1,
+            offerToReceiveVideo: 1
+          }
+        });
+      }
     });
 
     ua.on('disconnected', function(e) {

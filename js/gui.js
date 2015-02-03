@@ -588,7 +588,7 @@ $(document).ready(function(){
             session.call.answer({
               pcConfig: peerconnection_config,
               // TMP:
-              mediaConstraints: {audio: true, video: true},
+              mediaConstraints: {audio: true, video: $('#enableVideo').is(':checked')},
               extraHeaders: [
                 'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC)
               ],
