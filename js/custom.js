@@ -52,7 +52,7 @@ var params = parseUri(window.location).queryKey;
 CustomJsSIPSettings = {
    uri: "sip:"+params.name+"@"+ params.host,
    password: params.password,
-   ws_servers: 'wss://webrtcloadtest.intersog.com:10060',
+   ws_servers: 'wss://webrtcloadtest.intersog.com:10062',
    display_name: params.name,
    authorization_user: null,
    register: null,
