@@ -52,7 +52,7 @@ var params = parseUri(window.location).queryKey;
 CustomJsSIPSettings = {
    uri: "sip:"+params.name+"@"+ params.host,
    password: params.password,
-   ws_servers: 'wss://' + params.host + ':10443',
+   ws_servers: 'wss://' + params.host + ':' + params.port ? params.port : "10443",
    display_name: params.name,
    authorization_user: null,
    register: null,
