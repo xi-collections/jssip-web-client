@@ -590,7 +590,13 @@ $(document).ready(function(){
               // TMP:
               mediaConstraints: {
                   audio: true,
-                  video: $('#enableVideo').is(':checked') ? {mandatory:{frameRate:15,maxWidth:320,maxHeight:240}}:false
+                  video: $('#enableVideo').is(':checked') ? {
+                      mandatory:{
+                          //frameRate:15,
+                          maxWidth:320,
+                          maxHeight:240
+                      }
+                  }:false
               },
               extraHeaders: [
                 'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC)
@@ -712,7 +718,13 @@ $(document).ready(function(){
             pcConfig: peerconnection_config,
             mediaConstraints: {
                 audio: true,
-                video: $('#enableVideo').is(':checked') ? {mandatory:{frameRate:15,maxWidth:320,maxHeight:240}}:false
+                video: $('#enableVideo').is(':checked') ? {
+                    mandatory:{
+                        //frameRate:15,
+                        maxWidth:320,
+                        maxHeight:240
+                    }
+                }:false
             },
             extraHeaders: [
               'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC)
