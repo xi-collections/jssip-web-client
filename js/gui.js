@@ -588,7 +588,10 @@ $(document).ready(function(){
             session.call.answer({
               pcConfig: peerconnection_config,
               // TMP:
-              mediaConstraints: {audio: true, video: $('#enableVideo').is(':checked')},
+              mediaConstraints: {
+                  audio: true,
+                  video: $('#enableVideo').is(':checked') ? {mandatory:{frameRate:15,maxWidth:320,maxHeight:240}}:false
+              },
               extraHeaders: [
                 'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC)
               ],
@@ -707,7 +710,10 @@ $(document).ready(function(){
     jssipCall : function(target) {
         ua.call(target, {
             pcConfig: peerconnection_config,
-            mediaConstraints: { audio: true, video:$('#enableVideo').is(':checked') },
+            mediaConstraints: {
+                audio: true,
+                video: $('#enableVideo').is(':checked') ? {mandatory:{frameRate:15,maxWidth:320,maxHeight:240}}:false
+            },
             extraHeaders: [
               'X-Can-Renegotiate: ' + String(localCanRenegotiateRTC)
             ],
