@@ -503,7 +503,7 @@ $(document).ready(function(){
       $(this).remove();
     });
     $("#login-box").fadeOut(1000, function() {
-      $(this).remove();
+     // $(this).remove();
     });
 
     // Apply custom settings.
